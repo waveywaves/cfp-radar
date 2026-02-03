@@ -2,13 +2,14 @@
 <div class="grid gap-4">
     {% for event in events %}
     {% set days_until_cfp = (event.cfp_deadline - today).days if event.cfp_deadline else none %}
-    <div class="relative bg-white rounded-lg shadow p-4
+    <div class="event-card relative bg-white rounded-lg shadow p-4
         {% if days_until_cfp is not none %}
             {% if days_until_cfp <= 7 %}cfp-urgent
             {% elif days_until_cfp <= 14 %}cfp-soon
             {% else %}cfp-open
             {% endif %}
-        {% endif %}">
+        {% endif %}"
+        data-country="{{ event.country }}">
         <div class="flex justify-between items-start">
             <div class="flex-1">
                 <h3 class="text-lg font-semibold text-gray-800">

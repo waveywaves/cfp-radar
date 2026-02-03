@@ -9,13 +9,118 @@
         .cfp-urgent { background-color: #fef2f2; border-left: 4px solid #ef4444; }
         .cfp-soon { background-color: #fffbeb; border-left: 4px solid #f59e0b; }
         .cfp-open { background-color: #f0fdf4; border-left: 4px solid #22c55e; }
+
+        /* Country Filter Styles */
+        .country-filter-container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .country-filter-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .country-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 2px solid #e5e7eb;
+            background: #f9fafb;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .country-pill:hover {
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+        }
+
+        .country-pill.active {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            border-color: #2563eb;
+            color: white;
+            box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+        }
+
+        .country-pill.all-countries {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-color: #059669;
+            color: white;
+        }
+
+        .country-pill.all-countries:hover {
+            border-color: #047857;
+        }
+
+        .country-flag {
+            font-size: 24px;
+            line-height: 1;
+        }
+
+        .country-name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .country-count {
+            background: rgba(255,255,255,0.3);
+            padding: 1px 6px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .country-pill.active .country-count {
+            background: rgba(255,255,255,0.25);
+        }
+
+        .event-card {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .filter-fade-in {
+            animation: fadeInScale 0.4s ease;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .country-filter-pills {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .country-pill {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-100 min-h-screen">
     <div class="container mx-auto px-4 py-8">
         <header class="mb-8">
-            <h1 class="text-3xl font-bold text-gray-800 mb-2">Tech Events & CFP Tracker</h1>
-            <p class="text-gray-600">CI/CD, DevOps, Platform Engineering, and Cloud Native events</p>
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg overflow-hidden shadow-lg mb-4 max-w-2xl mx-auto">
+                <img src="logo-optimized.png" alt="Tech Events & CFP Tracker" class="w-full h-auto">
+            </div>
+            <p class="text-gray-600 text-center">CI/CD, DevOps, Platform Engineering, and Cloud Native events</p>
         </header>
 
         <!-- Legend -->
@@ -31,6 +136,33 @@
             </span>
         </div>
 
+        <!-- Country Filter -->
+        {% if countries %}
+        <div class="country-filter-container">
+            <div class="country-filter-pills">
+                <div class="country-pill all-countries active" onclick="toggleCountry('all')">
+                    <span class="country-flag">🌍</span>
+                    <span class="country-name">All Countries</span>
+                    <span class="country-count">{{ events|length }}</span>
+                </div>
+                {% for country, count in countries %}
+                <div class="country-pill" onclick="toggleCountry('{{ country }}')" data-country="{{ country }}">
+                    <span class="country-flag">
+                        {% if country == 'USA' %}🇺🇸
+                        {% elif country == 'France' %}🇫🇷
+                        {% elif country == 'India' %}🇮🇳
+                        {% elif country == 'Israel' %}🇮🇱
+                        {% elif country == 'Czech Republic' %}🇨🇿
+                        {% endif %}
+                    </span>
+                    <span class="country-name">{{ country }}</span>
+                    <span class="country-count">{{ count }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
         <!-- Event List -->
         <div id="event-list">
             {% include "partials/event_list.html" %}
@@ -41,5 +173,70 @@
             Vibed with love by Chmouel Boudjnah &lt;chmouel@redhat.com&gt;
         </footer>
     </div>
+
+    <script>
+        // Track active country filters
+        let activeCountries = new Set();
+
+        function toggleCountry(country) {
+            const allPill = document.querySelector('.country-pill.all-countries');
+
+            if (country === 'all') {
+                // Clear all filters
+                activeCountries.clear();
+
+                // Update pill states
+                document.querySelectorAll('.country-pill').forEach(pill => {
+                    pill.classList.remove('active');
+                });
+                allPill.classList.add('active');
+            } else {
+                // Toggle country selection
+                if (activeCountries.has(country)) {
+                    activeCountries.delete(country);
+                } else {
+                    activeCountries.add(country);
+                }
+
+                // Update pill states
+                const pillToToggle = document.querySelector(`.country-pill[data-country="${country}"]`);
+                if (activeCountries.has(country)) {
+                    pillToToggle.classList.add('active');
+                    allPill.classList.remove('active');
+                } else {
+                    pillToToggle.classList.remove('active');
+
+                    // If no countries selected, activate "All"
+                    if (activeCountries.size === 0) {
+                        allPill.classList.add('active');
+                    }
+                }
+            }
+
+            filterEvents();
+        }
+
+        function filterEvents() {
+            const eventCards = document.querySelectorAll('.event-card');
+            const showAll = activeCountries.size === 0;
+
+            eventCards.forEach(card => {
+                const country = card.dataset.country;
+                const shouldShow = showAll || activeCountries.has(country);
+
+                if (shouldShow) {
+                    card.style.display = 'block';
+                    card.classList.add('filter-fade-in');
+
+                    // Remove animation class after animation completes
+                    setTimeout(() => {
+                        card.classList.remove('filter-fade-in');
+                    }, 400);
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>

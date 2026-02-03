@@ -1,6 +1,7 @@
 """Static HTML generator for events."""
 
 import os
+import shutil
 from datetime import date
 
 from jinja2 import Environment, FileSystemLoader
@@ -22,6 +23,15 @@ def generate_html(events: list, output_file: str) -> None:
 
     events = sorted(events, key=sort_key)
 
+    # Extract unique countries with counts
+    country_counts = {}
+    for event in events:
+        country = event.country
+        country_counts[country] = country_counts.get(country, 0) + 1
+
+    # Sort countries by count (most events first)
+    countries = sorted(country_counts.items(), key=lambda x: x[1], reverse=True)
+
     # Setup Jinja2 templates
     templates_dir = os.path.join(os.path.dirname(__file__), "web", "templates")
     env = Environment(loader=FileSystemLoader(templates_dir), autoescape=True)
@@ -37,6 +47,7 @@ def generate_html(events: list, output_file: str) -> None:
         selected_topic=None,
         has_cfp=None,
         today=date.today(),
+        countries=countries,
     )
 
     # Ensure output directory exists
@@ -47,3 +58,9 @@ def generate_html(events: list, output_file: str) -> None:
     # Write the HTML file
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(html)
+
+    # Copy optimized logo to output directory
+    logo_src = os.path.join("data", "logo-optimized.png")
+    if os.path.exists(logo_src):
+        logo_dst = os.path.join(output_dir, "logo-optimized.png")
+        shutil.copy2(logo_src, logo_dst)
