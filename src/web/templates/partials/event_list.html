@@ -2,7 +2,7 @@
 <div class="grid gap-4">
     {% for event in events %}
     {% set days_until_cfp = (event.cfp_deadline - today).days if event.cfp_deadline else none %}
-    <div class="bg-white rounded-lg shadow p-4
+    <div class="relative bg-white rounded-lg shadow p-4
         {% if days_until_cfp is not none %}
             {% if days_until_cfp <= 7 %}cfp-urgent
             {% elif days_until_cfp <= 14 %}cfp-soon
@@ -12,7 +12,7 @@
         <div class="flex justify-between items-start">
             <div class="flex-1">
                 <h3 class="text-lg font-semibold text-gray-800">
-                    <a href="{{ event.website }}" target="_blank" class="hover:text-blue-600">
+                    <a href="{{ event.website }}" target="_blank" class="hover:text-blue-600 after:absolute after:inset-0">
                         {{ event.name }}
                     </a>
                 </h3>
@@ -57,7 +57,7 @@
                 </div>
                 {% if event.cfp_url %}
                 <a href="{{ event.cfp_url }}" target="_blank"
-                   class="inline-block mt-2 px-3 py-1 bg-green-600 text-white text-sm rounded hover:bg-green-700">
+                   class="relative z-10 inline-block mt-2 px-3 py-1 bg-green-600 text-white text-sm rounded hover:bg-green-700">
                     Submit CFP
                 </a>
                 {% endif %}
