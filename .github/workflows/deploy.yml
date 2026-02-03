@@ -25,7 +25,9 @@ jobs:
       - name: Generate static HTML
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: uv run cfp-radar collect data/index.html
+        run: |
+          mkdir -p data
+          uv run cfp-radar collect data/index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
