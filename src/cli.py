@@ -25,6 +25,10 @@ def main():
         action="store_true",
         help="Skip AI-powered web search (faster, but fewer results)",
     )
+    collect_parser.add_argument(
+        "--config",
+        help="Path to config YAML file (default: config.yaml)",
+    )
 
     # Notify command
     notify_parser = subparsers.add_parser("notify", help="Send Slack notifications for upcoming CFPs")
@@ -40,6 +44,10 @@ def main():
     list_parser.add_argument("--city", help="Filter by city")
     list_parser.add_argument("--topic", help="Filter by topic")
     list_parser.add_argument("--cfp", action="store_true", help="Show only events with open CFP")
+    list_parser.add_argument(
+        "--config",
+        help="Path to config YAML file (default: config.yaml)",
+    )
 
     args = parser.parse_args()
 
@@ -57,9 +65,14 @@ def main():
 async def cmd_collect(args):
     """Run event collection."""
     from datetime import date
+
+    from .config import set_config_file, EVENTS_FILE
+
+    if args.config:
+        set_config_file(args.config)
+
     from .collector.agent import collect_all_events
     from .collector.models import EventStore
-    from .config import EVENTS_FILE
 
     print("Collecting events from all sources...")
     use_ai = not args.no_ai
@@ -98,8 +111,13 @@ async def cmd_notify(args):
 def cmd_list(args):
     """List events."""
     from datetime import date
+
+    from .config import set_config_file, EVENTS_FILE
+
+    if args.config:
+        set_config_file(args.config)
+
     from .collector.models import EventStore
-    from .config import EVENTS_FILE
 
     store = EventStore(EVENTS_FILE)
     events = store.filter(

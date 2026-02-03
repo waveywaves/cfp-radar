@@ -1,0 +1,13 @@
+cities:
+  - city: Paris
+    country: France
+  - city: Bangalore
+    country: India
+  - city: Pune
+    country: India
+  - city: Tel Aviv
+    country: Israel
+  - city: Raleigh
+    country: USA
+  - city: Brno
+    country: Czech Republic

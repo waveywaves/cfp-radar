@@ -1,5 +1,5 @@
 [project]
-name = "gather-cnf"
+name = "cfp-radar"
 version = "0.1.0"
 description = "AI-powered tech events and CFP tracker for CI/CD, DevOps, and Cloud Native communities"
 readme = "README.md"
@@ -12,6 +12,7 @@ dependencies = [
     "uvicorn[standard]",
     "jinja2",
     "python-dateutil",
+    "pyyaml",
 ]
 
 [project.optional-dependencies]
@@ -22,7 +23,7 @@ dev = [
 ]
 
 [project.scripts]
-gather-cnf = "src.cli:main"
+cfp-radar = "src.cli:main"
 
 [build-system]
 requires = ["hatchling"]
