@@ -1,0 +1,36 @@
+[project]
+name = "gather-cnf"
+version = "0.1.0"
+description = "AI-powered tech events and CFP tracker for CI/CD, DevOps, and Cloud Native communities"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "google-genai",
+    "httpx",
+    "beautifulsoup4",
+    "fastapi",
+    "uvicorn[standard]",
+    "jinja2",
+    "python-dateutil",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "respx",
+]
+
+[project.scripts]
+gather-cnf = "src.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

@@ -1,0 +1,76 @@
+{% if events %}
+<div class="grid gap-4">
+    {% for event in events %}
+    {% set days_until_cfp = (event.cfp_deadline - today).days if event.cfp_deadline else none %}
+    <div class="bg-white rounded-lg shadow p-4
+        {% if days_until_cfp is not none %}
+            {% if days_until_cfp <= 7 %}cfp-urgent
+            {% elif days_until_cfp <= 14 %}cfp-soon
+            {% else %}cfp-open
+            {% endif %}
+        {% endif %}">
+        <div class="flex justify-between items-start">
+            <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-800">
+                    <a href="{{ event.website }}" target="_blank" class="hover:text-blue-600">
+                        {{ event.name }}
+                    </a>
+                </h3>
+                <p class="text-gray-600">
+                    {{ event.city }}, {{ event.country }}
+                    <span class="mx-2">|</span>
+                    {{ event.start_date.strftime('%b %d, %Y') }}
+                    {% if event.end_date and event.end_date != event.start_date %}
+                    - {{ event.end_date.strftime('%b %d, %Y') }}
+                    {% endif %}
+                </p>
+                {% if event.description %}
+                <p class="text-gray-500 text-sm mt-1">{{ event.description[:200] }}{% if event.description|length > 200 %}...{% endif %}</p>
+                {% endif %}
+                <div class="flex flex-wrap gap-2 mt-2">
+                    {% for topic in event.topics %}
+                    <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">{{ topic }}</span>
+                    {% endfor %}
+                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">{{ event.event_type }}</span>
+                </div>
+            </div>
+            <div class="text-right ml-4">
+                {% if event.cfp_deadline %}
+                <div class="text-sm">
+                    <span class="font-medium
+                        {% if days_until_cfp <= 7 %}text-red-600
+                        {% elif days_until_cfp <= 14 %}text-yellow-600
+                        {% else %}text-green-600
+                        {% endif %}">
+                        CFP: {{ event.cfp_deadline.strftime('%b %d') }}
+                    </span>
+                    {% if days_until_cfp is not none %}
+                    <br>
+                    <span class="text-gray-500">
+                        {% if days_until_cfp == 0 %}Today!
+                        {% elif days_until_cfp == 1 %}Tomorrow
+                        {% elif days_until_cfp > 0 %}{{ days_until_cfp }} days left
+                        {% else %}Closed
+                        {% endif %}
+                    </span>
+                    {% endif %}
+                </div>
+                {% if event.cfp_url %}
+                <a href="{{ event.cfp_url }}" target="_blank"
+                   class="inline-block mt-2 px-3 py-1 bg-green-600 text-white text-sm rounded hover:bg-green-700">
+                    Submit CFP
+                </a>
+                {% endif %}
+                {% else %}
+                <span class="text-gray-400 text-sm">No CFP info</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="bg-white rounded-lg shadow p-8 text-center text-gray-500">
+    <p>No events found. Try adjusting the filters or refresh the data.</p>
+</div>
+{% endif %}

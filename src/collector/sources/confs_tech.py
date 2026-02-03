@@ -1,0 +1,117 @@
+"""Collector for confs.tech - open source conference list."""
+
+import httpx
+from datetime import date, datetime
+from ..models import Event
+from ...config import TARGET_CITIES, TOPICS
+
+
+CONFS_TECH_BASE = "https://raw.githubusercontent.com/tech-conferences/conference-data/main/conferences"
+
+# confs.tech category mappings for our topics
+CATEGORIES = ["devops", "cloud", "general"]
+
+
+async def fetch_conferences(year: int | None = None) -> list[Event]:
+    """Fetch conferences from confs.tech GitHub data."""
+    if year is None:
+        year = date.today().year
+
+    events = []
+    async with httpx.AsyncClient(timeout=30.0) as client:
+        for category in CATEGORIES:
+            url = f"{CONFS_TECH_BASE}/{year}/{category}.json"
+            try:
+                response = await client.get(url)
+                if response.status_code == 200:
+                    data = response.json()
+                    events.extend(_parse_conferences(data, category))
+            except Exception:
+                # Category file may not exist for all years
+                continue
+
+    return events
+
+
+def _parse_conferences(data: list[dict], category: str) -> list[Event]:
+    """Parse conference data from confs.tech format."""
+    events = []
+    target_cities_lower = {c["city"].lower() for c in TARGET_CITIES}
+    target_countries = {c["country"].lower() for c in TARGET_CITIES}
+
+    for conf in data:
+        city = conf.get("city", "")
+        country = conf.get("country", "")
+
+        # Check if event is in our target locations
+        city_match = city.lower() in target_cities_lower
+        country_match = country.lower() in target_countries
+
+        if not (city_match or country_match):
+            continue
+
+        # Check topic relevance
+        name_lower = conf.get("name", "").lower()
+        topics_found = [t for t in TOPICS if t.lower() in name_lower]
+
+        # Add category as topic
+        if category == "devops":
+            topics_found.append("devops")
+        elif category == "cloud":
+            topics_found.append("cloud native")
+
+        if not topics_found and category == "general":
+            # Skip general conferences without relevant keywords
+            continue
+
+        try:
+            start_date = date.fromisoformat(conf["startDate"])
+        except (KeyError, ValueError):
+            continue
+
+        end_date = None
+        if conf.get("endDate"):
+            try:
+                end_date = date.fromisoformat(conf["endDate"])
+            except ValueError:
+                pass
+
+        cfp_deadline = None
+        cfp_url = None
+        if conf.get("cfpEndDate"):
+            try:
+                cfp_deadline = date.fromisoformat(conf["cfpEndDate"])
+            except ValueError:
+                pass
+        if conf.get("cfpUrl"):
+            cfp_url = conf["cfpUrl"]
+
+        event = Event(
+            name=conf.get("name", ""),
+            city=city,
+            country=country,
+            start_date=start_date,
+            end_date=end_date,
+            event_type="conference",
+            topics=list(set(topics_found)),
+            cfp_deadline=cfp_deadline,
+            cfp_url=cfp_url,
+            website=conf.get("url", ""),
+            description=conf.get("description", ""),
+            relevance_score=_calculate_relevance(conf, topics_found),
+            last_updated=datetime.now(),
+        )
+        events.append(event)
+
+    return events
+
+
+def _calculate_relevance(conf: dict, topics_found: list[str]) -> float:
+    """Calculate relevance score based on topic matches."""
+    score = 0.3  # Base score for being in target location
+    score += min(0.5, len(topics_found) * 0.15)  # Topic matches
+    if conf.get("cfpUrl"):
+        score += 0.1  # Has CFP
+    if conf.get("twitter"):
+        score += 0.1  # Active community presence
+    return min(1.0, score)
