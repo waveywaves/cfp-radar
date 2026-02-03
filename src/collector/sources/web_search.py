@@ -6,6 +6,7 @@ from datetime import date, datetime
 
 import httpx
 from google import genai
+from google.genai import types
 
 from ...config import GEMINI_API_KEY, TARGET_CITIES, TOPICS
 from ..models import Event
@@ -64,8 +65,11 @@ Return ONLY the JSON, no other text."""
         try:
             print(f"Querying Gemini for {city}, {country}...")
             response = client.models.generate_content(
-                model="gemini-2.5-flash-lite",
+                model="gemini-3-flash-preview",
                 contents=prompt,
+                config=types.GenerateContentConfig(
+                    tools=[types.Tool(google_search=types.GoogleSearch())],
+                ),
             )
             content = response.text
             print(f"Gemini response for {city}: {len(content)} chars")
@@ -96,7 +100,10 @@ def _parse_response(content: str, city: str, country: str) -> list[Event]:
 
         for item in event_list:
             try:
-                start_date = date.fromisoformat(item["start_date"])
+                start_date_str = item.get("start_date")
+                if not start_date_str or not isinstance(start_date_str, str):
+                    continue
+                start_date = date.fromisoformat(start_date_str)
 
                 end_date = None
                 if item.get("end_date"):
@@ -176,8 +183,11 @@ Return ONLY the JSON, no other text."""
 
     try:
         response = client.models.generate_content(
-            model="gemini-2.5-flash-lite",
+            model="gemini-3-flash-preview",
             contents=prompt,
+            config=types.GenerateContentConfig(
+                tools=[types.Tool(google_search=types.GoogleSearch())],
+            ),
         )
         content = response.text
         json_match = re.search(r"\{[\s\S]*\}", content)
