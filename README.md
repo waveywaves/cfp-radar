@@ -1,6 +1,10 @@
 # CFP Radar
 
-AI-powered tool to discover and track tech events (CI/CD, DevOps, Platform Engineering, Cloud Native) with CFP opportunities.
+AI-powered webpage generator to discover and track tech events (CI/CD, DevOps, Platform Engineering, Cloud Native) with CFP opportunities.
+
+<img width="3826" height="2000" alt="image" src="https://github.com/user-attachments/assets/fee98e12-853e-4385-825f-e020f2294c9d" />
+
+See it live on: https://openshift-pipelines.github.io/cfp-radar/
 
 ## Setup
 
