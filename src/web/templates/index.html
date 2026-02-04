@@ -1,448 +1,529 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tech Events & CFP Tracker</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%233b82f6'/%3E%3Cstop offset='100%25' stop-color='%238b5cf6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23g)'/%3E%3Ccircle cx='50' cy='50' r='35' fill='none' stroke='%23fff' stroke-width='2' opacity='0.5'/%3E%3Ccircle cx='50' cy='50' r='25' fill='none' stroke='%23fff' stroke-width='2' opacity='0.5'/%3E%3Ccircle cx='50' cy='50' r='15' fill='none' stroke='%23fff' stroke-width='2' opacity='0.5'/%3E%3Cline x1='50' y1='50' x2='75' y2='25' stroke='%2322c55e' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='50' r='5' fill='%23fff'/%3E%3C/svg%3E"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Tech Grid Pattern Background */
-        body {
-            background: linear-gradient(135deg, #1e3a8a 0%, #4c1d95 50%, #6b21a8 100%);
-            background-attachment: fixed;
-            position: relative;
-        }
+      /* Tech Grid Pattern Background */
+      body {
+        background: linear-gradient(
+          135deg,
+          #1e3a8a 0%,
+          #4c1d95 50%,
+          #6b21a8 100%
+        );
+        background-attachment: fixed;
+        position: relative;
+      }
 
-        /* Base grid pattern overlay */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-image:
-                repeating-linear-gradient(
-                    0deg,
-                    transparent,
-                    transparent 50px,
-                    rgba(0, 217, 255, 0.1) 50px,
-                    rgba(0, 217, 255, 0.1) 51px
-                ),
-                repeating-linear-gradient(
-                    90deg,
-                    transparent,
-                    transparent 50px,
-                    rgba(0, 217, 255, 0.1) 50px,
-                    rgba(0, 217, 255, 0.1) 51px
-                );
-            pointer-events: none;
-        }
+      /* Base grid pattern overlay */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image:
+          repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 50px,
+            rgba(0, 217, 255, 0.1) 50px,
+            rgba(0, 217, 255, 0.1) 51px
+          ),
+          repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 50px,
+            rgba(0, 217, 255, 0.1) 50px,
+            rgba(0, 217, 255, 0.1) 51px
+          );
+        pointer-events: none;
+      }
 
-        /* Animated accent grid lines (every 5th line glows) */
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-image:
-                repeating-linear-gradient(
-                    0deg,
-                    transparent,
-                    transparent 250px,
-                    rgba(59, 130, 246, 0.2) 250px,
-                    rgba(59, 130, 246, 0.2) 252px
-                ),
-                repeating-linear-gradient(
-                    90deg,
-                    transparent,
-                    transparent 250px,
-                    rgba(59, 130, 246, 0.2) 250px,
-                    rgba(59, 130, 246, 0.2) 252px
-                );
-            animation: gridPulse 4s ease-in-out infinite;
-            pointer-events: none;
-        }
+      /* Animated accent grid lines (every 5th line glows) */
+      body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image:
+          repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 250px,
+            rgba(59, 130, 246, 0.2) 250px,
+            rgba(59, 130, 246, 0.2) 252px
+          ),
+          repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 250px,
+            rgba(59, 130, 246, 0.2) 250px,
+            rgba(59, 130, 246, 0.2) 252px
+          );
+        animation: gridPulse 4s ease-in-out infinite;
+        pointer-events: none;
+      }
 
-        /* Grid pulse animation */
-        @keyframes gridPulse {
-            0%, 100% { opacity: 0.1; }
-            50% { opacity: 0.3; }
+      /* Grid pulse animation */
+      @keyframes gridPulse {
+        0%,
+        100% {
+          opacity: 0.1;
         }
+        50% {
+          opacity: 0.3;
+        }
+      }
 
-        .cfp-urgent {
-            background-color: rgba(30, 41, 59, 0.7) !important;
-            border-left: 4px solid #ef4444;
-            box-shadow: 0 0 20px rgba(239, 68, 68, 0.2);
-        }
-        .cfp-soon {
-            background-color: rgba(30, 41, 59, 0.7) !important;
-            border-left: 4px solid #f59e0b;
-            box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
-        }
-        .cfp-open {
-            background-color: rgba(30, 41, 59, 0.7) !important;
-            border-left: 4px solid #22c55e;
-            box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
-        }
+      .cfp-urgent {
+        background-color: rgba(30, 41, 59, 0.7) !important;
+        border-left: 4px solid #ef4444;
+        box-shadow: 0 0 20px rgba(239, 68, 68, 0.2);
+      }
+      .cfp-soon {
+        background-color: rgba(30, 41, 59, 0.7) !important;
+        border-left: 4px solid #f59e0b;
+        box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+      }
+      .cfp-open {
+        background-color: rgba(30, 41, 59, 0.7) !important;
+        border-left: 4px solid #22c55e;
+        box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+      }
 
-        /* Main container with dark glassmorphism effect */
-        .container {
-            background: rgba(15, 23, 42, 0.9);
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-            color: #f1f5f9;
-        }
+      /* Main container with dark glassmorphism effect */
+      .container {
+        background: rgba(15, 23, 42, 0.9);
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        color: #f1f5f9;
+      }
 
-        /* Legend text color */
-        .container .text-sm {
-            color: #e2e8f0;
-        }
+      /* Legend text color */
+      .container .text-sm {
+        color: #e2e8f0;
+      }
 
-        /* Country Filter Styles */
-        .country-filter-container {
-            background: rgba(30, 41, 59, 0.8);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 24px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            border: 1px solid rgba(100, 116, 139, 0.3);
-        }
+      /* Country Filter Styles */
+      .country-filter-container {
+        background: rgba(30, 41, 59, 0.8);
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 24px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(100, 116, 139, 0.3);
+      }
 
+      .country-filter-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+      }
+
+      .country-pill {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        border-radius: 50px;
+        border: 2px solid rgba(71, 85, 105, 0.5);
+        background: rgba(51, 65, 85, 0.6);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        user-select: none;
+        color: #e2e8f0;
+      }
+
+      .country-pill:hover {
+        border-color: #3b82f6;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+      }
+
+      .country-pill.active {
+        background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        border-color: #2563eb;
+        color: white;
+        box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+      }
+
+      .country-pill.all-countries {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        border-color: #059669;
+        color: white;
+      }
+
+      .country-pill.all-countries:hover {
+        border-color: #047857;
+      }
+
+      .country-flag {
+        font-size: 24px;
+        line-height: 1;
+      }
+
+      .country-name {
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      .country-count {
+        background: rgba(255, 255, 255, 0.3);
+        padding: 1px 6px;
+        border-radius: 10px;
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      .country-pill.active .country-count {
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      .event-card {
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease;
+        background: rgba(30, 41, 59, 0.7) !important;
+        border: 1px solid rgba(100, 116, 139, 0.3);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Event card text colors */
+      .event-card h3,
+      .event-card h3 a {
+        color: #f1f5f9 !important;
+      }
+
+      .event-card h3 a:hover {
+        color: #60a5fa !important;
+      }
+
+      .event-card p,
+      .event-card .text-gray-600 {
+        color: #cbd5e1 !important;
+      }
+
+      .event-card .text-gray-500,
+      .event-card .text-sm {
+        color: #94a3b8 !important;
+      }
+
+      .event-card .text-gray-800 {
+        color: #f1f5f9 !important;
+      }
+
+      /* Topic tags styling for dark theme */
+      .event-card .bg-blue-100 {
+        background: rgba(59, 130, 246, 0.25) !important;
+        color: #93c5fd !important;
+        border: 1px solid rgba(59, 130, 246, 0.4);
+      }
+
+      .event-card .bg-gray-100 {
+        background: rgba(71, 85, 105, 0.4) !important;
+        color: #cbd5e1 !important;
+        border: 1px solid rgba(100, 116, 139, 0.4);
+      }
+
+      /* CFP deadline colors stay vibrant */
+      .event-card .text-red-600 {
+        color: #fca5a5 !important;
+        font-weight: 600;
+      }
+
+      .event-card .text-yellow-600 {
+        color: #fcd34d !important;
+        font-weight: 600;
+      }
+
+      .event-card .text-green-600 {
+        color: #86efac !important;
+        font-weight: 600;
+      }
+
+      /* Submit CFP button - sleek tech style */
+      .event-card .bg-green-600 {
+        background: linear-gradient(
+          135deg,
+          #3b82f6 0%,
+          #8b5cf6 100%
+        ) !important;
+        border: 1px solid rgba(139, 92, 246, 0.5) !important;
+        box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3) !important;
+        font-weight: 600 !important;
+        transition: all 0.3s ease !important;
+        color: #ffffff !important;
+      }
+
+      .event-card .bg-green-600:hover {
+        background: linear-gradient(
+          135deg,
+          #2563eb 0%,
+          #7c3aed 100%
+        ) !important;
+        box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5) !important;
+        transform: translateY(-2px) !important;
+        border-color: rgba(139, 92, 246, 0.8) !important;
+        color: #ffffff !important;
+      }
+
+      .filter-fade-in {
+        animation: fadeInScale 0.4s ease;
+      }
+
+      @keyframes fadeInScale {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* Empty state styling for dark theme */
+      #event-list .bg-white {
+        background: rgba(30, 41, 59, 0.7) !important;
+        border: 1px solid rgba(100, 116, 139, 0.3);
+        color: #94a3b8 !important;
+      }
+
+      /* Rainbow flow animation for footer */
+      @keyframes rainbowFlow {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 200% 50%;
+        }
+      }
+
+      /* Footer styling with rainbow animation */
+      footer {
+        border-color: rgba(71, 85, 105, 0.5) !important;
+        background: linear-gradient(
+          90deg,
+          #ff0000,
+          /* Red */ #ff8000,
+          /* Orange */ #ffff00,
+          /* Yellow */ #00ff00,
+          /* Green */ #0080ff,
+          /* Blue */ #8000ff,
+          /* Purple */ #ff0080,
+          /* Pink */ #ff0000 /* Red (repeat for seamless loop) */
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rainbowFlow 3s linear infinite;
+      }
+
+      /* GitHub icon glow animation */
+      @keyframes iconGlow {
+        0%,
+        100% {
+          filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+          transform: scale(1);
+        }
+        50% {
+          filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.8));
+          transform: scale(1.1);
+        }
+      }
+
+      .github-icon {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 8px;
+        animation: iconGlow 2s ease-in-out infinite;
+      }
+
+      .github-icon svg {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
+      }
+
+      @media (max-width: 640px) {
         .country-filter-pills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
+          flex-direction: column;
+          align-items: stretch;
         }
-
         .country-pill {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border-radius: 50px;
-            border: 2px solid rgba(71, 85, 105, 0.5);
-            background: rgba(51, 65, 85, 0.6);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            user-select: none;
-            color: #e2e8f0;
+          justify-content: center;
         }
-
-        .country-pill:hover {
-            border-color: #3b82f6;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
-        }
-
-        .country-pill.active {
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-            border-color: #2563eb;
-            color: white;
-            box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
-        }
-
-        .country-pill.all-countries {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            border-color: #059669;
-            color: white;
-        }
-
-        .country-pill.all-countries:hover {
-            border-color: #047857;
-        }
-
-        .country-flag {
-            font-size: 24px;
-            line-height: 1;
-        }
-
-        .country-name {
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .country-count {
-            background: rgba(255,255,255,0.3);
-            padding: 1px 6px;
-            border-radius: 10px;
-            font-size: 11px;
-            font-weight: 600;
-        }
-
-        .country-pill.active .country-count {
-            background: rgba(255,255,255,0.25);
-        }
-
-        .event-card {
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            background: rgba(30, 41, 59, 0.7) !important;
-            border: 1px solid rgba(100, 116, 139, 0.3);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Event card text colors */
-        .event-card h3,
-        .event-card h3 a {
-            color: #f1f5f9 !important;
-        }
-
-        .event-card h3 a:hover {
-            color: #60a5fa !important;
-        }
-
-        .event-card p,
-        .event-card .text-gray-600 {
-            color: #cbd5e1 !important;
-        }
-
-        .event-card .text-gray-500,
-        .event-card .text-sm {
-            color: #94a3b8 !important;
-        }
-
-        .event-card .text-gray-800 {
-            color: #f1f5f9 !important;
-        }
-
-        /* Topic tags styling for dark theme */
-        .event-card .bg-blue-100 {
-            background: rgba(59, 130, 246, 0.25) !important;
-            color: #93c5fd !important;
-            border: 1px solid rgba(59, 130, 246, 0.4);
-        }
-
-        .event-card .bg-gray-100 {
-            background: rgba(71, 85, 105, 0.4) !important;
-            color: #cbd5e1 !important;
-            border: 1px solid rgba(100, 116, 139, 0.4);
-        }
-
-        /* CFP deadline colors stay vibrant */
-        .event-card .text-red-600 {
-            color: #fca5a5 !important;
-            font-weight: 600;
-        }
-
-        .event-card .text-yellow-600 {
-            color: #fcd34d !important;
-            font-weight: 600;
-        }
-
-        .event-card .text-green-600 {
-            color: #86efac !important;
-            font-weight: 600;
-        }
-
-        /* Submit CFP button - sleek tech style */
-        .event-card .bg-green-600 {
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%) !important;
-            border: 1px solid rgba(139, 92, 246, 0.5) !important;
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3) !important;
-            font-weight: 600 !important;
-            transition: all 0.3s ease !important;
-            color: #ffffff !important;
-        }
-
-        .event-card .bg-green-600:hover {
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%) !important;
-            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5) !important;
-            transform: translateY(-2px) !important;
-            border-color: rgba(139, 92, 246, 0.8) !important;
-            color: #ffffff !important;
-        }
-
-        .filter-fade-in {
-            animation: fadeInScale 0.4s ease;
-        }
-
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Empty state styling for dark theme */
-        #event-list .bg-white {
-            background: rgba(30, 41, 59, 0.7) !important;
-            border: 1px solid rgba(100, 116, 139, 0.3);
-            color: #94a3b8 !important;
-        }
-
-        /* Rainbow flow animation for footer */
-        @keyframes rainbowFlow {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-        }
-
-        /* Footer styling with rainbow animation */
-        footer {
-            border-color: rgba(71, 85, 105, 0.5) !important;
-            background: linear-gradient(
-                90deg,
-                #ff0000,  /* Red */
-                #ff8000,  /* Orange */
-                #ffff00,  /* Yellow */
-                #00ff00,  /* Green */
-                #0080ff,  /* Blue */
-                #8000ff,  /* Purple */
-                #ff0080,  /* Pink */
-                #ff0000   /* Red (repeat for seamless loop) */
-            );
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: rainbowFlow 3s linear infinite;
-        }
-
-        @media (max-width: 640px) {
-            .country-filter-pills {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .country-pill {
-                justify-content: center;
-            }
-        }
+      }
     </style>
-</head>
-<body class="min-h-screen">
+  </head>
+  <body class="min-h-screen">
     <div class="container mx-auto px-4 py-8">
-        <header class="mb-8">
-            <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg overflow-hidden shadow-lg mb-4 max-w-4xl mx-auto">
-                <img src="logo.webp" alt="Tech Events & CFP Tracker" class="w-full h-auto">
-            </div>
-        </header>
-
-        <!-- Legend -->
-        <div class="flex gap-4 mb-4 text-sm">
-            <span class="flex items-center gap-1">
-                <span class="w-3 h-3 bg-red-500 rounded"></span> CFP &lt; 7 days
-            </span>
-            <span class="flex items-center gap-1">
-                <span class="w-3 h-3 bg-yellow-500 rounded"></span> CFP &lt; 14 days
-            </span>
-            <span class="flex items-center gap-1">
-                <span class="w-3 h-3 bg-green-500 rounded"></span> CFP Open
-            </span>
+      <header class="mb-8">
+        <div
+          class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg overflow-hidden shadow-lg mb-4 max-w-4xl mx-auto"
+        >
+          <img
+            src="logo.webp"
+            alt="Tech Events & CFP Tracker"
+            class="w-full h-auto"
+          />
         </div>
+      </header>
 
-        <!-- Country Filter -->
-        {% if countries %}
-        <div class="country-filter-container">
-            <div class="country-filter-pills">
-                <div class="country-pill all-countries active" onclick="toggleCountry('all')">
-                    <span class="country-flag">🌍</span>
-                    <span class="country-name">All Countries</span>
-                    <span class="country-count">{{ events|length }}</span>
-                </div>
-                {% for country, count in countries %}
-                <div class="country-pill" onclick="toggleCountry('{{ country }}')" data-country="{{ country }}">
-                    <span class="country-flag">
-                        {% if country == 'USA' %}🇺🇸
-                        {% elif country == 'France' %}🇫🇷
-                        {% elif country == 'India' %}🇮🇳
-                        {% elif country == 'Israel' %}🇮🇱
-                        {% elif country == 'Czech Republic' %}🇨🇿
-                        {% endif %}
-                    </span>
-                    <span class="country-name">{{ country }}</span>
-                    <span class="country-count">{{ count }}</span>
-                </div>
-                {% endfor %}
-            </div>
+      <!-- Legend -->
+      <div class="flex gap-4 mb-4 text-sm">
+        <span class="flex items-center gap-1">
+          <span class="w-3 h-3 bg-red-500 rounded"></span> CFP &lt; 7 days
+        </span>
+        <span class="flex items-center gap-1">
+          <span class="w-3 h-3 bg-yellow-500 rounded"></span> CFP &lt; 14 days
+        </span>
+        <span class="flex items-center gap-1">
+          <span class="w-3 h-3 bg-green-500 rounded"></span> CFP Open
+        </span>
+      </div>
+
+      <!-- Country Filter -->
+      {% if countries %}
+      <div class="country-filter-container">
+        <div class="country-filter-pills">
+          <div
+            class="country-pill all-countries active"
+            onclick="toggleCountry('all')"
+          >
+            <span class="country-flag">🌍</span>
+            <span class="country-name">All Countries</span>
+            <span class="country-count">{{ events|length }}</span>
+          </div>
+          {% for country, count in countries %}
+          <div
+            class="country-pill"
+            onclick="toggleCountry('{{ country }}')"
+            data-country="{{ country }}"
+          >
+            <span class="country-flag">
+              {% if country == 'USA' %}🇺🇸 {% elif country == 'France' %}🇫🇷 {%
+              elif country == 'India' %}🇮🇳 {% elif country == 'Israel' %}🇮🇱 {%
+              elif country == 'Czech Republic' %}🇨🇿 {% endif %}
+            </span>
+            <span class="country-name">{{ country }}</span>
+            <span class="country-count">{{ count }}</span>
+          </div>
+          {% endfor %}
         </div>
-        {% endif %}
+      </div>
+      {% endif %}
 
-        <!-- Event List -->
-        <div id="event-list">
-            {% include "partials/event_list.html" %}
-        </div>
+      <!-- Event List -->
+      <div id="event-list">{% include "partials/event_list.html" %}</div>
 
-        <!-- Footer -->
-        <footer class="mt-8 pt-4 border-t border-gray-300 text-center text-sm font-medium">
-            Vibed with love by Chmouel Boudjnah &lt;chmouel@redhat.com&gt;
-        </footer>
+      <!-- Footer -->
+      <footer
+        class="mt-8 pt-4 border-t border-gray-300 text-center text-sm font-medium"
+      >
+        Vibed with love by Chmouel Boudjnah -
+        <a href="https://github.com/chmouel">@chmouel</a>
+        <a
+          href="https://github.com/openshift-pipelines/cfp-radar"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="github-icon"
+          title="View on GitHub"
+        >
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+            />
+          </svg>
+        </a>
+      </footer>
     </div>
 
     <script>
-        // Track active country filters
-        let activeCountries = new Set();
+      // Track active country filters
+      let activeCountries = new Set();
 
-        function toggleCountry(country) {
-            const allPill = document.querySelector('.country-pill.all-countries');
+      function toggleCountry(country) {
+        const allPill = document.querySelector(".country-pill.all-countries");
 
-            if (country === 'all') {
-                // Clear all filters
-                activeCountries.clear();
+        if (country === "all") {
+          // Clear all filters
+          activeCountries.clear();
 
-                // Update pill states
-                document.querySelectorAll('.country-pill').forEach(pill => {
-                    pill.classList.remove('active');
-                });
-                allPill.classList.add('active');
-            } else {
-                // Toggle country selection
-                if (activeCountries.has(country)) {
-                    activeCountries.delete(country);
-                } else {
-                    activeCountries.add(country);
-                }
+          // Update pill states
+          document.querySelectorAll(".country-pill").forEach((pill) => {
+            pill.classList.remove("active");
+          });
+          allPill.classList.add("active");
+        } else {
+          // Toggle country selection
+          if (activeCountries.has(country)) {
+            activeCountries.delete(country);
+          } else {
+            activeCountries.add(country);
+          }
 
-                // Update pill states
-                const pillToToggle = document.querySelector(`.country-pill[data-country="${country}"]`);
-                if (activeCountries.has(country)) {
-                    pillToToggle.classList.add('active');
-                    allPill.classList.remove('active');
-                } else {
-                    pillToToggle.classList.remove('active');
+          // Update pill states
+          const pillToToggle = document.querySelector(
+            `.country-pill[data-country="${country}"]`,
+          );
+          if (activeCountries.has(country)) {
+            pillToToggle.classList.add("active");
+            allPill.classList.remove("active");
+          } else {
+            pillToToggle.classList.remove("active");
 
-                    // If no countries selected, activate "All"
-                    if (activeCountries.size === 0) {
-                        allPill.classList.add('active');
-                    }
-                }
+            // If no countries selected, activate "All"
+            if (activeCountries.size === 0) {
+              allPill.classList.add("active");
             }
-
-            filterEvents();
+          }
         }
 
-        function filterEvents() {
-            const eventCards = document.querySelectorAll('.event-card');
-            const showAll = activeCountries.size === 0;
+        filterEvents();
+      }
 
-            eventCards.forEach(card => {
-                const country = card.dataset.country;
-                const shouldShow = showAll || activeCountries.has(country);
+      function filterEvents() {
+        const eventCards = document.querySelectorAll(".event-card");
+        const showAll = activeCountries.size === 0;
 
-                if (shouldShow) {
-                    card.style.display = 'block';
-                    card.classList.add('filter-fade-in');
+        eventCards.forEach((card) => {
+          const country = card.dataset.country;
+          const shouldShow = showAll || activeCountries.has(country);
 
-                    // Remove animation class after animation completes
-                    setTimeout(() => {
-                        card.classList.remove('filter-fade-in');
-                    }, 400);
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
+          if (shouldShow) {
+            card.style.display = "block";
+            card.classList.add("filter-fade-in");
+
+            // Remove animation class after animation completes
+            setTimeout(() => {
+              card.classList.remove("filter-fade-in");
+            }, 400);
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
     </script>
-</body>
+  </body>
 </html>
