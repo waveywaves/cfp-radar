@@ -6,19 +6,18 @@
     "start_date": "2026-02-03",
     "website": "https://www.cloudnativedays.fr",
     "event_type": "conference",
-    "end_date": null,
+    "end_date": "2026-02-03",
     "topics": [
-      "kubernetes",
-      "cloud native",
-      "devops",
-      "platform engineering",
-      "open source"
+      "Cloud Native",
+      "Kubernetes",
+      "DevOps",
+      "Platform Engineering"
     ],
     "cfp_deadline": null,
     "cfp_url": null,
-    "description": "Formerly known as Kubernetes Community Days (KCD) France, this community-driven event focuses on Cloud Native technologies, DevOps practices, and open-source solutions.",
+    "description": "Formerly known as Kubernetes Community Days France, this community-organized conference focuses on cloud-native innovation, DevOps practices, and open-source solutions.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:19:51.392615",
+    "last_updated": "2026-02-04T06:50:51.210399",
     "id": "b36e3dc332bc"
   },
   {
@@ -47,21 +46,20 @@
     "city": "Brno",
     "country": "Czech Republic",
     "start_date": "2026-02-05",
-    "website": "https://www.meetup.com/devops-brno/events/",
+    "website": "https://www.meetup.com/aws-brno/",
     "event_type": "meetup",
     "end_date": null,
     "topics": [
-      "Cloud",
-      "Automation",
+      "Cloud Computing",
       "AWS",
-      "Platform Engineering",
-      "CDK"
+      "Infrastructure",
+      "AI"
     ],
     "cfp_deadline": null,
     "cfp_url": null,
-    "description": "The inaugural gathering of the Brno AWS User Group (organized by DevOps Club Brno), covering AWS CDK deployment strategies and infrastructure automation for agentic AI systems.",
+    "description": "A local community meetup focused on Amazon Web Services and cloud architecture, often covering infrastructure as code and automated deployment pipelines.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:22:17.482566",
+    "last_updated": "2026-02-04T06:53:18.798378",
     "id": "df492c01186e"
   },
   {
@@ -69,20 +67,20 @@
     "city": "Bangalore",
     "country": "India",
     "start_date": "2026-02-07",
-    "website": "https://www.meetup.com/kubernetes-bangalore/",
+    "website": "https://dev.events/india/bengaluru",
     "event_type": "meetup",
     "end_date": "2026-02-07",
     "topics": [
       "Cloud Native",
       "Agentic Stack",
-      "DevOps",
-      "AI"
+      "Kubernetes",
+      "DevOps"
     ],
     "cfp_deadline": null,
-    "cfp_url": "https://bit.ly/lmcfpsubmit",
-    "description": "An insightful event focused on Cloud Native Platforms and the transition from automation to intelligence in infrastructure.",
+    "cfp_url": null,
+    "description": "A technical meetup focusing on the intersection of cloud-native infrastructure and the 'Agentic Stack' of AI.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T17:38:36.974339",
+    "last_updated": "2026-02-04T06:51:12.236911",
     "id": "2ebb3010b75d"
   },
   {
@@ -95,15 +93,15 @@
     "end_date": null,
     "topics": [
       "observability",
-      "monitoring",
       "sre",
-      "devops"
+      "monitoring",
+      "platform engineering"
     ],
     "cfp_deadline": null,
     "cfp_url": null,
-    "description": "A community gathering focused on observability practices, featuring technical talks on monitoring stacks and site reliability engineering.",
+    "description": "A specialized gathering for observability practitioners to discuss monitoring stacks, SRE metrics, and platform health dashboarding.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T17:39:15.546906",
+    "last_updated": "2026-02-04T06:51:45.217018",
     "id": "8042bb987a4d"
   },
   {
@@ -163,9 +161,9 @@
     ],
     "cfp_deadline": null,
     "cfp_url": null,
-    "description": "A landmark event for DevOps professionals exploring the frontier of Agentic AI and its role in software delivery, speed, and collaboration.",
+    "description": "A milestone edition focusing on Agentic AI as the next frontier in DevOps evolution, featuring expert-led sessions and networking for DevOps professionals.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:20:22.408615",
+    "last_updated": "2026-02-04T06:51:12.236874",
     "id": "1735f62447d1"
   },
   {
@@ -177,18 +175,18 @@
     "event_type": "conference",
     "end_date": "2026-02-14",
     "topics": [
+      "devops",
       "open source",
       "cloud native",
       "kubernetes",
-      "devops",
-      "platform engineering",
-      "infrastructure as code"
+      "mlops",
+      "platform engineering"
     ],
-    "cfp_deadline": "2025-11-21",
-    "cfp_url": "https://pretalx.com/devconf-in-2026/cfp",
-    "description": "DevConf.IN is a community-driven open-source conference organized by Red Hat. The 2026 edition in Pune features dedicated tracks for Cloud, Edge, and Platform Engineering, covering Kubernetes, DevOps, and sustainable computing.",
+    "cfp_deadline": "2025-11-30",
+    "cfp_url": "https://devconf.info/in/",
+    "description": "The annual community-driven developer conference organized by Red Hat, focusing on open source technologies, cloud infrastructure, containerization, and platform engineering.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T17:39:15.546868",
+    "last_updated": "2026-02-04T06:51:45.216983",
     "id": "110441992259"
   },
   {
@@ -238,20 +236,20 @@
     "city": "Pune",
     "country": "India",
     "start_date": "2026-02-26",
-    "website": "https://10times.com/test-automation-summit-pune",
+    "website": "https://testautomationsummit.com/pune/",
     "event_type": "conference",
     "end_date": null,
     "topics": [
-      "CI/CD",
-      "Test Automation",
-      "DevOps",
-      "Software Quality"
+      "continuous integration",
+      "test automation",
+      "devops",
+      "quality engineering"
     ],
     "cfp_deadline": null,
     "cfp_url": null,
-    "description": "A professional gathering focused on the latest trends in test automation, emphasizing continuous integration and delivery practices.",
+    "description": "A specialized conference focusing on the latest trends in software testing automation, including CI/CD integration and AI-driven quality assurance.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:20:48.857411",
+    "last_updated": "2026-02-03T17:39:15.546899",
     "id": "c5c261d0d7d1"
   },
   {
@@ -284,17 +282,18 @@
     "event_type": "conference",
     "end_date": null,
     "topics": [
-      "AWS",
-      "Cloud Native",
-      "DevOps",
-      "Infrastructure as Code",
-      "AI/ML"
+      "aws",
+      "cloud",
+      "devops",
+      "serverless",
+      "kubernetes",
+      "infrastructure as code"
     ],
-    "cfp_deadline": null,
-    "cfp_url": "https://awsugpune.in/cfp",
-    "description": "Pune's premier AWS community event featuring expert speakers, hands-on workshops, and networking with hundreds of cloud and DevOps professionals.",
+    "cfp_deadline": "2026-02-08",
+    "cfp_url": "https://sessionize.com/aws-community-day-pune-2026/",
+    "description": "A full-day community-led conference for cloud enthusiasts, covering deep dives into AWS core services, DevOps automation, SRE practices, and modern infrastructure.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:20:48.857414",
+    "last_updated": "2026-02-04T06:51:45.217003",
     "id": "77736da5e324"
   },
   {
@@ -302,21 +301,20 @@
     "city": "Raleigh",
     "country": "USA",
     "start_date": "2026-03-25",
-    "website": "https://ceph.io/en/news/events/2026/ceph-days-raleigh/",
+    "website": "https://ceph.io/en/news/blog/2025/ceph-days-raleigh-2026/",
     "event_type": "conference",
     "end_date": "2026-03-25",
     "topics": [
-      "Ceph",
       "storage",
-      "Kubernetes",
-      "cloud native",
+      "kubernetes",
+      "openshift",
       "platform engineering"
     ],
     "cfp_deadline": "2026-02-16",
-    "cfp_url": "https://ceph.io/en/news/events/2026/ceph-days-raleigh/",
-    "description": "A full-day event dedicated to Ceph storage, featuring experts and community members discussing platform integrations, Kubernetes, and deployment automation.",
+    "cfp_url": "https://ceph.io/en/news/blog/2025/ceph-days-raleigh-2026/",
+    "description": "A full-day event dedicated to Ceph storage and its integrations with platforms like Kubernetes and OpenShift.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:21:48.398263",
+    "last_updated": "2026-02-03T17:40:20.732272",
     "id": "db75fde66796"
   },
   {
@@ -326,19 +324,18 @@
     "start_date": "2026-04-01",
     "website": "https://aws.amazon.com/events/summits/paris/",
     "event_type": "conference",
-    "end_date": null,
+    "end_date": "2026-04-01",
     "topics": [
-      "cloud infrastructure",
-      "devops",
-      "cloud native",
-      "aws",
-      "automation"
+      "Cloud Native",
+      "DevOps",
+      "Platform Engineering",
+      "AWS"
     ],
     "cfp_deadline": null,
     "cfp_url": null,
-    "description": "A major cloud event covering AWS services with dedicated tracks for DevOps, modernization, and cloud-native application development.",
+    "description": "A major cloud event focused on building and scaling applications on AWS with dedicated tracks for DevOps, modernization, and serverless architectures.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:19:51.392657",
+    "last_updated": "2026-02-04T06:50:51.210435",
     "id": "c8c9cc5f530f"
   },
   {
@@ -366,20 +363,20 @@
     "city": "Bangalore",
     "country": "India",
     "start_date": "2026-04-21",
-    "website": "https://developersummit.com/",
+    "website": "https://www.developersummit.com/",
     "event_type": "conference",
     "end_date": "2026-04-24",
     "topics": [
       "DevOps",
-      "Cloud Native",
+      "Cloud Computing",
       "Software Architecture",
-      "Platform Thinking"
+      "CI/CD"
     ],
     "cfp_deadline": null,
-    "cfp_url": "https://developersummit.com/call-for-speakers",
-    "description": "APAC's premier independent developer summit focusing on scaling modern systems, developer tools, and advanced platform engineering.",
+    "cfp_url": null,
+    "description": "One of Asia's largest independent polyglot developer conferences featuring deep-dives into DevOps patterns, tools, and architectural practices.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:20:22.408640",
+    "last_updated": "2026-02-04T06:51:12.236907",
     "id": "23b0810961fa"
   },
   {
@@ -387,21 +384,20 @@
     "city": "Paris",
     "country": "France",
     "start_date": "2026-04-22",
-    "website": "https://www.devoxx.fr",
+    "website": "https://www.devoxx.fr/",
     "event_type": "conference",
     "end_date": "2026-04-24",
     "topics": [
-      "Java",
+      "Software Engineering",
       "Cloud",
       "DevOps",
-      "CI/CD",
-      "Software Architecture"
+      "Architecture"
     ],
-    "cfp_deadline": "2026-01-31",
-    "cfp_url": "https://devoxxfr2026.cfp.dev",
-    "description": "The largest independent developer conference in France with dedicated tracks for Cloud, DevOps, and modern CI/CD practices.",
+    "cfp_deadline": null,
+    "cfp_url": "https://cfp.devoxx.fr/",
+    "description": "One of France's largest developer conferences with extensive sessions on DevOps, container orchestration, and platform automation.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T17:37:56.488089",
+    "last_updated": "2026-02-04T06:50:51.210441",
     "id": "6483af00ebb1"
   },
   {
@@ -457,15 +453,16 @@
     "topics": [
       "devops",
       "ci/cd",
+      "platform engineering",
       "automation",
-      "cloud native",
-      "culture"
+      "kubernetes",
+      "sre"
     ],
     "cfp_deadline": null,
-    "cfp_url": "https://devopsdays.org/events/2026-raleigh/propose",
-    "description": "The 10th anniversary celebration of DevOpsDays Raleigh, covering software development, IT infrastructure operations, and the intersection between them.",
+    "cfp_url": "https://devopsdays.org/events/2026-raleigh/speak",
+    "description": "A community-led conference covering software development, IT infrastructure operations, and the intersection between them. It features a mix of curated talks and self-organized 'open space' sessions focusing heavily on DevOps culture and automation.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:21:48.398267",
+    "last_updated": "2026-02-04T06:52:44.657556",
     "id": "760893cf2350"
   },
   {
@@ -515,20 +512,20 @@
     "city": "Tel Aviv",
     "country": "Israel",
     "start_date": "2026-05-26",
-    "website": "",
+    "website": "https://platfor-ma.com",
     "event_type": "conference",
     "end_date": "2026-05-26",
     "topics": [
-      "platform engineering",
-      "devops",
-      "infrastructure as code",
-      "developer experience"
+      "Platform Engineering",
+      "DevOps",
+      "Infrastructure Management",
+      "Cloud Native"
     ],
-    "cfp_deadline": null,
-    "cfp_url": "https://www.platfor-ma.com/",
-    "description": "A premier conference dedicated specifically to Platform Engineering, featuring deep dives into internal developer platforms, infrastructure management, and scaling engineering culture.",
+    "cfp_deadline": "2026-03-31",
+    "cfp_url": "https://platfor-ma.com/apply-to-speak",
+    "description": "Israel's premier conference dedicated to Platform Engineering, bringing together experts in infrastructure management, internal developer platforms, and DevOps best practices.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:21:23.265003",
+    "last_updated": "2026-02-04T06:52:27.270082",
     "id": "2d2d53d30eca"
   },
   {
@@ -553,27 +550,27 @@
     "id": "5152a7a52f69"
   },
   {
-    "name": "DevConf.CZ 2026",
+    "name": "DevConf.cz 2026",
     "city": "Brno",
     "country": "Czech Republic",
     "start_date": "2026-06-18",
-    "website": "https://devconf.info/cz/",
+    "website": "https://www.devconf.info/cz",
     "event_type": "conference",
     "end_date": "2026-06-20",
     "topics": [
       "DevOps",
       "CI/CD",
-      "Cloud Native",
       "Kubernetes",
-      "Automation",
-      "SRE",
-      "Open Source"
+      "Cloud Native",
+      "Platform Engineering",
+      "Linux",
+      "Automation"
     ],
     "cfp_deadline": "2026-03-01",
-    "cfp_url": "https://devconf.info/cz/",
-    "description": "DevConf.CZ is an annual, free, Red Hat-sponsored technology conference for developers, admins, and DevOps engineers focused on open source technologies, cloud infrastructure, and community collaboration.",
+    "cfp_url": "https://www.devconf.info/cz/cfp",
+    "description": "The largest annual open-source community conference in Central Europe, sponsored by Red Hat. It features dedicated tracks for DevOps, CI/CD, and Cloud-Native infrastructure.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:22:17.482541",
+    "last_updated": "2026-02-04T06:53:18.798360",
     "id": "ecba2306cc26"
   },
   {
@@ -628,16 +625,17 @@
     "end_date": "2026-10-20",
     "topics": [
       "open source",
+      "cloud native",
       "devops",
       "ci/cd",
-      "cloud native",
-      "platform engineering"
+      "platform engineering",
+      "kubernetes"
     ],
     "cfp_deadline": null,
-    "cfp_url": "https://allthingsopen.org/call-for-papers/",
-    "description": "One of the largest open source and tech conferences on the U.S. East Coast, featuring over 150 sessions across nearly 20 tracks, including DevOps and cloud technologies.",
+    "cfp_url": "https://allthingsopen.org/call-for-speakers/",
+    "description": "One of the largest open-source conferences in the US, featuring dedicated tracks for DevOps, Cloud Native technologies, and Platform Engineering. It takes place at the Raleigh Convention Center.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:21:48.398270",
+    "last_updated": "2026-02-04T06:52:44.657561",
     "id": "45161a79b785"
   },
   {
@@ -790,47 +788,7 @@
     "id": "b7482aa1a980"
   },
   {
-    "name": "#21 Site Reliability Engineering - Pr\u00e9-chauffe CND France",
-    "city": "Paris",
-    "country": "France",
-    "start_date": "2026-02-02",
-    "website": "https://dev.events/events/21-site-reliability-engineering-pre-chauffe-cnd-france-paris",
-    "event_type": "meetup",
-    "end_date": null,
-    "topics": [
-      "sre",
-      "observability",
-      "platform engineering"
-    ],
-    "cfp_deadline": null,
-    "cfp_url": null,
-    "description": "A pre-conference meetup for Cloud Native Days France specifically focused on SRE and observability practices.",
-    "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:19:51.392642",
-    "id": "b0c442f7cd47"
-  },
-  {
-    "name": "Cloud Native & AI Day: Agentic Stack",
-    "city": "Bangalore",
-    "country": "India",
-    "start_date": "2026-02-07",
-    "website": "https://dev.events/cities/bengaluru",
-    "event_type": "meetup",
-    "end_date": "2026-02-07",
-    "topics": [
-      "Cloud Native",
-      "DevOps",
-      "Agentic AI"
-    ],
-    "cfp_deadline": null,
-    "cfp_url": null,
-    "description": "A specialized day event discussing the intersection of cloud-native infrastructure and AI agentic stacks.",
-    "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:20:22.408653",
-    "id": "35cf938bccc4"
-  },
-  {
-    "name": "Pune Developer's Community: Modern Data Platforms & Scaling Microservices",
+    "name": "Modern Data Platforms and Scaling Microservices",
     "city": "Pune",
     "country": "India",
     "start_date": "2026-02-07",
@@ -838,366 +796,396 @@
     "event_type": "meetup",
     "end_date": null,
     "topics": [
-      "Platform Engineering",
-      "Microservices",
-      "Cloud Native",
-      "Deployment Architectures"
+      "platform engineering",
+      "microservices",
+      "deployment architecture",
+      "scaling"
     ],
     "cfp_deadline": null,
     "cfp_url": null,
-    "description": "Technical sessions on scaling microservices using modern cloud-native deployment patterns and the evolution of modern data platforms.",
+    "description": "A technical meetup hosted by the Pune Developer's Community focusing on microservices deployment architectures and scaling platforms for modern data needs.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:20:48.857400",
-    "id": "15c57e7b722b"
+    "last_updated": "2026-02-04T06:51:45.217015",
+    "id": "a1d4abe09a99"
   },
   {
-    "name": "February 2026 RTP Meetup",
-    "city": "Raleigh",
-    "country": "USA",
+    "name": "FIRST Technical Colloquium Bangalore 2026",
+    "city": "Bangalore",
+    "country": "India",
     "start_date": "2026-02-10",
-    "website": "https://allthingsopen.org/events/february-2026-rtp-meetup/",
-    "event_type": "meetup",
-    "end_date": "2026-02-10",
+    "website": "https://www.first.org/events/colloquia/bangalore2026/",
+    "event_type": "conference",
+    "end_date": "2026-02-11",
     "topics": [
-      "open source",
-      "tech networking",
-      "cloud"
+      "SRE",
+      "Security Operations",
+      "Incident Response",
+      "DevSecOps"
     ],
-    "cfp_deadline": null,
-    "cfp_url": null,
-    "description": "A community meetup focused on open source and emerging technologies in the Research Triangle Park area.",
+    "cfp_deadline": "2025-11-21",
+    "cfp_url": "https://www.first.org/events/colloquia/bangalore2026/cfp",
+    "description": "A colloquium featuring in-depth technical talks on reliability, security operations, and incident response practices.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:21:48.398238",
-    "id": "a24a1301b6ee"
+    "last_updated": "2026-02-04T06:51:12.236920",
+    "id": "41d956f4f0d5"
   },
   {
     "name": "DevConf.IN 2026",
-    "city": "Pune",
+    "city": "Bangalore",
     "country": "India",
     "start_date": "2026-02-12",
-    "website": "https://devconf.info/in",
+    "website": "https://devconf.info/in/2026",
     "event_type": "conference",
     "end_date": "2026-02-13",
     "topics": [
-      "Open Source",
-      "DevOps",
       "Cloud Native",
       "Kubernetes",
+      "DevOps",
       "Platform Engineering",
       "Infrastructure as Code"
     ],
     "cfp_deadline": "2025-11-21",
-    "cfp_url": "https://devconf.info/in/cfp",
-    "description": "The annual developer conference organized by Red Hat, providing a platform for the FOSS community to engage in technical talks and workshops on Cloud Native and DevOps technologies.",
+    "cfp_url": "https://devconf.info/in/2026/cfp",
+    "description": "The annual community-driven developer conference organized by Red Hat, focusing on open-source technologies including cloud-native, platform engineering, and DevOps.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:20:48.857406",
+    "last_updated": "2026-02-04T06:51:12.236894",
     "id": "b219ef521561"
   },
   {
-    "name": "ObservabilityCON on the Road",
+    "name": "ObservabilityCON on the Road Paris",
     "city": "Paris",
     "country": "France",
     "start_date": "2026-02-19",
-    "website": "https://grafana.com/about/events/observabilitycon/roadshow/",
+    "website": "https://grafana.com/events/observabilitycon/roadshow/",
     "event_type": "conference",
     "end_date": null,
     "topics": [
-      "observability",
-      "monitoring",
-      "sre",
-      "devops"
+      "SRE",
+      "Observability",
+      "DevOps",
+      "Monitoring"
     ],
     "cfp_deadline": null,
     "cfp_url": null,
-    "description": "Part of Grafana Labs' global tour, focusing on the latest trends in observability, monitoring, and site reliability engineering.",
+    "description": "A focused event by Grafana Labs showcasing the latest trends in observability, SRE practices, and telemetry data management.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:19:51.392653",
-    "id": "504ab1522653"
+    "last_updated": "2026-02-04T06:50:51.210425",
+    "id": "f375453e84cb"
   },
   {
-    "name": "ManageEngine UserConf Bengaluru 2026",
-    "city": "Bangalore",
-    "country": "India",
+    "name": "Annual North Carolina Cybersecurity Symposium",
+    "city": "Raleigh",
+    "country": "USA",
     "start_date": "2026-02-19",
-    "website": "https://www.manageengine.com/events/userconf/bengaluru-2026.html",
+    "website": "https://mckimmoncenter.ncsu.edu/",
     "event_type": "conference",
     "end_date": "2026-02-20",
     "topics": [
-      "IT Operations",
-      "Platform Evolution",
+      "cybersecurity",
+      "DevSecOps",
+      "compliance",
+      "infrastructure security"
+    ],
+    "cfp_deadline": null,
+    "cfp_url": null,
+    "description": "Hosted at the McKimmon Conference and Training Center, this symposium focuses on modern security challenges, including the integration of security into the development lifecycle (DevSecOps) and cloud security infrastructure.",
+    "relevance_score": 0.7,
+    "last_updated": "2026-02-04T06:52:44.657538",
+    "id": "11ada664c42b"
+  },
+  {
+    "name": "Tech & Beer: Round Tables with AWS Community Builders",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "start_date": "2026-02-23",
+    "website": "https://aws-experience.com",
+    "event_type": "meetup",
+    "end_date": null,
+    "topics": [
+      "Cloud",
+      "AWS",
+      "Infrastructure",
+      "Community"
+    ],
+    "cfp_deadline": null,
+    "cfp_url": null,
+    "description": "An evening of community-led round tables and technical discussions hosted at the AWS Experience center, focusing on cloud architecture and best practices.",
+    "relevance_score": 0.7,
+    "last_updated": "2026-02-04T06:52:27.270046",
+    "id": "bf5af212d4a2"
+  },
+  {
+    "name": "AI Tech Track: Observability, Gateway & Multi-Agent Architecture",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "start_date": "2026-03-05",
+    "website": "https://aws-experience.com",
+    "event_type": "meetup",
+    "end_date": null,
+    "topics": [
+      "Observability",
+      "Platform Engineering",
+      "AIOps",
+      "Cloud Native"
+    ],
+    "cfp_deadline": null,
+    "cfp_url": null,
+    "description": "A technical deep-dive into observability patterns, gateway policies, and multi-agent orchestration within the AWS ecosystem.",
+    "relevance_score": 0.7,
+    "last_updated": "2026-02-04T06:52:27.270065",
+    "id": "d6e69c9174d2"
+  },
+  {
+    "name": "Rootconf Platform Engineering Meet-up",
+    "city": "Bangalore",
+    "country": "India",
+    "start_date": "2026-03-07",
+    "website": "https://hasgeek.com/rootconf/",
+    "event_type": "meetup",
+    "end_date": "2026-03-07",
+    "topics": [
+      "Platform Engineering",
+      "SRE",
+      "Infrastructure",
+      "Developer Experience"
+    ],
+    "cfp_deadline": "2026-03-04",
+    "cfp_url": "https://hasgeek.com/rootconf/platform-engineering-meet-up-mar-7/",
+    "description": "A focused community meetup discussing real-world lessons in building internal developer platforms and scaling engineering teams.",
+    "relevance_score": 0.7,
+    "last_updated": "2026-02-04T06:51:12.236916",
+    "id": "7ab2c8601e33"
+  },
+  {
+    "name": "RuneTalk Brno (Recurring Tech Series)",
+    "city": "Brno",
+    "country": "Czech Republic",
+    "start_date": "2026-03-10",
+    "website": "https://www.meetup.com/runetalk-brno-meetups/",
+    "event_type": "meetup",
+    "end_date": null,
+    "topics": [
+      "Kubernetes",
+      "Cloud Native",
+      "Security",
       "DevOps"
     ],
     "cfp_deadline": null,
     "cfp_url": null,
-    "description": "A technical conference covering product-to-platform evolution and modern IT challenges for digital enterprises.",
+    "description": "A technical meetup series specifically focused on Kubernetes, cloud computing, and cloud-native security. Dates typically follow a quarterly cadence with sessions at Impact Hub Brno.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:20:22.408660",
-    "id": "d5c61eaca15a"
+    "last_updated": "2026-02-04T06:53:18.798387",
+    "id": "1e17af91540b"
   },
   {
-    "name": "Brno Java User Group: News in Spring Boot 4 and Spring Framework 7",
-    "city": "Brno",
-    "country": "Czech Republic",
-    "start_date": "2026-02-19",
-    "website": "https://www.meetup.com/brno-jug/events/",
-    "event_type": "meetup",
-    "end_date": null,
+    "name": "Evolve to AI",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "start_date": "2026-03-11",
+    "website": "https://evolve-to-ai.com",
+    "event_type": "conference",
+    "end_date": "2026-03-11",
     "topics": [
-      "Cloud Native",
+      "Agentic Ops",
       "Observability",
-      "Platform Engineering"
+      "Scaling",
+      "Deployment"
     ],
     "cfp_deadline": null,
     "cfp_url": null,
-    "description": "A technical deep-dive session focused on the cloud-native evolution of Java applications, covering new observability modules, metrics, and declarative interfaces.",
+    "description": "A technical development conference dedicated to building autonomous architectures, covering critical aspects of Agentic Ops, including deployment strategies, observability, and scaling.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:22:17.482570",
-    "id": "88a18ddb4495"
-  },
-  {
-    "name": "Kubernetes Bangalore Meetup (Feb 2026)",
-    "city": "Bangalore",
-    "country": "India",
-    "start_date": "2026-02-28",
-    "website": "https://www.meetup.com/kubernetes-blr/",
-    "event_type": "meetup",
-    "end_date": "2026-02-28",
-    "topics": [
-      "Kubernetes",
-      "Docker",
-      "Cloud Native Platforms"
-    ],
-    "cfp_deadline": null,
-    "cfp_url": "https://bit.ly/lmcfpsubmit",
-    "description": "An in-depth meetup focusing on container orchestration and the evolving impact of cloud-native solutions on development workflows.",
-    "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:20:22.408648",
-    "id": "7d30eedaa7e7"
+    "last_updated": "2026-02-04T06:52:27.270070",
+    "id": "c4d5ec25c929"
   },
   {
     "name": "DevOps Conclave & Awards 2026",
     "city": "Bangalore",
     "country": "India",
     "start_date": "2026-03-13",
-    "website": "https://10times.com/devops-conclave-awards",
+    "website": "https://ubsforums.com/",
     "event_type": "conference",
     "end_date": "2026-03-13",
     "topics": [
       "DevOps",
       "CI/CD",
-      "Site Reliability Engineering",
-      "Platform Engineering"
+      "Software Delivery",
+      "Cloud Automation"
     ],
     "cfp_deadline": null,
     "cfp_url": null,
-    "description": "Industry leaders gather to explore the latest trends and tools in the DevOps landscape, focusing on accelerating software delivery and cross-team collaboration.",
+    "description": "A gathering for the DevOps community to explore the latest trends, tools, and practices in software delivery and cross-team collaboration.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:20:22.408634",
+    "last_updated": "2026-02-04T06:51:12.236903",
     "id": "b3c71655d0b1"
   },
   {
-    "name": "Quarterly Large Scale Production Engineering (LSPE) Meetup",
-    "city": "Bangalore",
+    "name": "AI in DevOps (AI Circle Meetup)",
+    "city": "Pune",
     "country": "India",
     "start_date": "2026-03-14",
-    "website": "https://dev.events/meetups/asia/india/bangalore/sre",
+    "website": "https://www.meetup.com/ai-circle/",
     "event_type": "meetup",
-    "end_date": "2026-03-14",
+    "end_date": null,
     "topics": [
-      "Production Engineering",
-      "SRE",
-      "Cloud Infrastructure"
-    ],
-    "cfp_deadline": null,
-    "cfp_url": null,
-    "description": "A recurring gathering focused on the challenges of managing production environments and site reliability at scale.",
-    "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:20:22.408657",
-    "id": "9ee44bf02ebf"
-  },
-  {
-    "name": "All Things AI 2026",
-    "city": "Raleigh",
-    "country": "USA",
-    "start_date": "2026-03-23",
-    "website": "https://allthingsopen.org/events/all-things-ai-2026/",
-    "event_type": "conference",
-    "end_date": "2026-03-23",
-    "topics": [
-      "AI",
-      "MLOps",
+      "devops",
+      "ai",
+      "resilience",
       "automation"
     ],
     "cfp_deadline": null,
     "cfp_url": null,
-    "description": "An AI practitioners and users conference focused on technologies, processes, and people in the AI space.",
+    "description": "A community event exploring the intersection of AI and DevOps, focusing on using intelligent automation to build and maintain resilient production systems.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:21:48.398258",
-    "id": "05fd6924ce76"
+    "last_updated": "2026-02-04T06:51:45.217012",
+    "id": "c7efe6e8f1c5"
   },
   {
-    "name": "GopherCamp 2026",
-    "city": "Brno",
-    "country": "Czech Republic",
-    "start_date": "2026-04-24",
-    "website": "https://gophercamp.cz/",
+    "name": "OWASP AppSec Israel 2026",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "start_date": "2026-05-18",
+    "website": "https://appsecil.org",
     "event_type": "conference",
-    "end_date": null,
+    "end_date": "2026-05-18",
     "topics": [
-      "Cloud Native",
-      "Backend Engineering",
-      "Go",
-      "Infrastructure"
-    ],
-    "cfp_deadline": "2026-03-01",
-    "cfp_url": "https://gophercamp.cz/",
-    "description": "A full-day conference in Brno dedicated to the Go programming language and its ecosystem, with a heavy focus on cloud-native development and backend systems.",
-    "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:22:17.482561",
-    "id": "912907da3e91"
-  },
-  {
-    "name": "International Conference on Secure Cloud Computing and Software Engineering (ICSCCSE)",
-    "city": "Pune",
-    "country": "India",
-    "start_date": "2026-05-24",
-    "website": "https://conferencealerts.co.in/pune",
-    "event_type": "conference",
-    "end_date": "2026-05-24",
-    "topics": [
-      "Cloud Computing",
-      "Software Engineering",
-      "Security",
-      "DevOps"
+      "DevSecOps",
+      "Application Security",
+      "Cloud Security"
     ],
     "cfp_deadline": null,
     "cfp_url": null,
-    "description": "An international gathering focused on the intersection of cloud infrastructure security and modern software engineering practices.",
+    "description": "Israel's premier application security event, bringing together developers and DevOps engineers to discuss modern security practices in the SDLC.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:20:48.857418",
-    "id": "145bc71c6441"
+    "last_updated": "2026-02-04T06:52:27.270074",
+    "id": "d32d09107fe3"
   },
   {
-    "name": "WeAreDevelopers Conference India 2026",
+    "name": "Future of AI 2026",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "start_date": "2026-05-24",
+    "website": "https://lynx.co/future-of-ai/",
+    "event_type": "conference",
+    "end_date": "2026-05-25",
+    "topics": [
+      "AI Infrastructure",
+      "DevOps",
+      "Data Science",
+      "Cloud"
+    ],
+    "cfp_deadline": null,
+    "cfp_url": null,
+    "description": "Israel's leading AI conference for tech leaders and engineers, featuring deep dives into AI infrastructure, enterprise applications, and the evolution of DevOps in the age of AI.",
+    "relevance_score": 0.7,
+    "last_updated": "2026-02-04T06:52:27.270078",
+    "id": "6717580f5716"
+  },
+  {
+    "name": "KubeCon + CloudNativeCon India 2026",
     "city": "Bangalore",
     "country": "India",
-    "start_date": "2026-05-26",
-    "website": "https://www.wearedevelopers.com/events/india",
+    "start_date": "2026-06-18",
+    "website": "https://events.linuxfoundation.org/kubecon-cloudnativecon-india/",
     "event_type": "conference",
-    "end_date": "2026-05-27",
+    "end_date": "2026-06-19",
     "topics": [
-      "Full-stack",
+      "Kubernetes",
+      "Cloud Native",
       "DevOps",
-      "Software Engineering Best Practices"
+      "CI/CD",
+      "Observability"
     ],
     "cfp_deadline": null,
     "cfp_url": null,
-    "description": "The first major India edition of the global developer conference, featuring deep dives into modern software trends and development methodologies.",
+    "description": "The premier event by the CNCF gathering adopters and technologists from leading open source and cloud native communities.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:20:22.408663",
-    "id": "dee5180d061d"
+    "last_updated": "2026-02-04T06:51:12.236899",
+    "id": "b123c63a19f3"
   },
   {
-    "name": "ReactNext 2026",
+    "name": "Cyber Week 2026",
     "city": "Tel Aviv",
     "country": "Israel",
-    "start_date": "2026-06-23",
-    "website": "",
+    "start_date": "2026-06-22",
+    "website": "https://cyberweek.tau.ac.il",
     "event_type": "conference",
-    "end_date": "2026-06-23",
+    "end_date": "2026-06-25",
     "topics": [
-      "ci/cd",
-      "frontend ops",
-      "web performance"
+      "Security Operations",
+      "Infrastructure",
+      "AI Security",
+      "Cloud Native"
     ],
     "cfp_deadline": null,
-    "cfp_url": "https://www.react-next.com/",
-    "description": "While primarily a React conference, it features a strong track on CI/CD for web applications and Frontend Infrastructure (FrontendOps).",
+    "cfp_url": null,
+    "description": "A major international cybersecurity event featuring dedicated tracks on security operations, critical infrastructure protection, and the security implications of cloud-native technologies.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:21:23.265007",
-    "id": "82cc8f0044e6"
-  },
-  {
-    "name": "NodeTLV 2026",
-    "city": "Tel Aviv",
-    "country": "Israel",
-    "start_date": "2026-06-24",
-    "website": "",
-    "event_type": "conference",
-    "end_date": "2026-06-24",
-    "topics": [
-      "backend infrastructure",
-      "ci/cd",
-      "serverless"
-    ],
-    "cfp_deadline": "2026-03-31",
-    "cfp_url": "https://www.nodetlv.com/",
-    "description": "An international conference focusing on Node.js and its ecosystem, including extensive sessions on backend infrastructure, CI/CD pipelines, and cloud-native Node.js deployment.",
-    "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:21:23.265013",
-    "id": "44f1662aa7d7"
-  },
-  {
-    "name": "OpenAlt 2026",
-    "city": "Brno",
-    "country": "Czech Republic",
-    "start_date": "2026-11-07",
-    "website": "https://openalt.cz/",
-    "event_type": "conference",
-    "end_date": "2026-11-08",
-    "topics": [
-      "Open Source",
-      "Linux",
-      "Security",
-      "DevOps"
-    ],
-    "cfp_deadline": "2026-10-01",
-    "cfp_url": "https://openalt.cz/",
-    "description": "An annual community conference dedicated to open-source software, hardware, and data. Dates are estimated based on its traditional occurrence on the first weekend of November.",
-    "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:22:17.482574",
-    "id": "30fd3c9ec026"
+    "last_updated": "2026-02-04T06:52:27.270086",
+    "id": "2fb1fa4dc90a"
   },
   {
     "name": "DevOps Live Paris 2026",
     "city": "Paris",
     "country": "France",
     "start_date": "2026-11-18",
-    "website": "https://www.techshowparis.fr/devops-live-paris",
+    "website": "https://www.techshowparis.fr/devops-live",
     "event_type": "conference",
     "end_date": "2026-11-19",
     "topics": [
-      "devops",
-      "ci/cd",
-      "automation",
-      "devsecops",
-      "sre"
+      "DevOps",
+      "CI/CD",
+      "DevSecOps",
+      "SRE",
+      "Platform Engineering"
     ],
     "cfp_deadline": null,
-    "cfp_url": "https://www.techshowparis.fr/become-a-speaker",
-    "description": "A primary event for DevOps, CI/CD, and IT automation in France, gathering leaders and practitioners to discuss scaling engineering and modernization.",
+    "cfp_url": null,
+    "description": "Part of Tech Show Paris, this event brings together IT leaders to discuss automation, continuous delivery, and the evolution of DevOps culture.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:19:51.392662",
+    "last_updated": "2026-02-04T06:50:51.210445",
     "id": "c6dadf07a16b"
+  },
+  {
+    "name": "apidays Paris 2026",
+    "city": "Paris",
+    "country": "France",
+    "start_date": "2026-12-01",
+    "website": "https://www.apidays.global/paris/",
+    "event_type": "conference",
+    "end_date": "2026-12-03",
+    "topics": [
+      "Platform Engineering",
+      "API Strategy",
+      "Automation",
+      "Platform Governance"
+    ],
+    "cfp_deadline": null,
+    "cfp_url": "https://www.apidays.global/paris/",
+    "description": "A flagship event focusing on the API economy, which includes critical discussions on platform engineering, self-service portals, and DevOps governance.",
+    "relevance_score": 0.7,
+    "last_updated": "2026-02-04T06:50:51.210449",
+    "id": "3244b08fb41a"
   },
   {
     "name": "Cybertech Global Tel Aviv 2027",
     "city": "Tel Aviv",
     "country": "Israel",
     "start_date": "2027-01-25",
-    "website": "",
+    "website": "https://www.cybertechisrael.com",
     "event_type": "conference",
     "end_date": "2027-01-27",
     "topics": [
-      "devsecops",
-      "cloud security",
-      "cybersecurity"
+      "Cloud Native",
+      "Security",
+      "DevSecOps",
+      "FinTech"
     ],
     "cfp_deadline": null,
-    "cfp_url": "https://www.cybertechisrael.com/",
-    "description": "One of the largest cybersecurity events globally, featuring significant tracks on DevSecOps, cloud-native security, and securing CI/CD pipelines.",
+    "cfp_url": null,
+    "description": "The largest cybersecurity event in the region, connecting global tech leaders and covering a wide range of infrastructure and cloud security topics.",
     "relevance_score": 0.7,
-    "last_updated": "2026-02-03T22:21:23.265016",
+    "last_updated": "2026-02-04T06:52:27.270090",
     "id": "e90bd739c098"
   }
 ]
