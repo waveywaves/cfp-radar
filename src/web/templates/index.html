@@ -283,10 +283,31 @@
             color: #94a3b8 !important;
         }
 
-        /* Footer styling for dark theme */
+        /* Rainbow flow animation for footer */
+        @keyframes rainbowFlow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        /* Footer styling with rainbow animation */
         footer {
             border-color: rgba(71, 85, 105, 0.5) !important;
-            color: #94a3b8 !important;
+            background: linear-gradient(
+                90deg,
+                #ff0000,  /* Red */
+                #ff8000,  /* Orange */
+                #ffff00,  /* Yellow */
+                #00ff00,  /* Green */
+                #0080ff,  /* Blue */
+                #8000ff,  /* Purple */
+                #ff0080,  /* Pink */
+                #ff0000   /* Red (repeat for seamless loop) */
+            );
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbowFlow 3s linear infinite;
         }
 
         @media (max-width: 640px) {
@@ -354,7 +375,7 @@
         </div>
 
         <!-- Footer -->
-        <footer class="mt-8 pt-4 border-t border-gray-300 text-center text-gray-500 text-sm">
+        <footer class="mt-8 pt-4 border-t border-gray-300 text-center text-sm font-medium">
             Vibed with love by Chmouel Boudjnah &lt;chmouel@redhat.com&gt;
         </footer>
     </div>
